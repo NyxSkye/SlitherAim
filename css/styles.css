@@ -1,0 +1,223 @@
+:root{
+    /* Button and hover */
+    --primary: #e2e8f0;
+    --primary-dark: #bddaff;
+
+    /* Text of 3 types */
+    --text: #0f172a;
+    --dark-text: #334155;
+    --light-text: #64748b;
+
+    /* Main Background */
+    --background: #f8fafc;
+
+    /* Card, Form, and Border */
+    --white: #ffffff;
+    --border: #e2e8f0;
+
+    --border-style: 1px solid var(--border);
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    color: var(--text);
+	background-image: url('/img_assets/bg.jpeg');
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    user-select: none;
+}
+
+/* ==================== HEADER ==================== */
+
+/* The side navigation menu */
+.sidenav {
+    margin: 20px;
+    height: 90%; /* 100% Full-height */
+    width: 50px;
+    position: fixed; /* Stay in place */
+    backdrop-filter: blur(10px);
+    border-right: 1px solid var(--border);
+    border-left: 1px solid var(--border);
+    overflow-x: hidden; /* Disable horizontal scroll */
+    overflow-y: auto;
+    padding-top: 30px; /* Place content 60px from the top */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the icons */
+    white-space: nowrap;
+    transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 34px;
+    z-index: 2;
+}
+
+.sidenav:hover {
+    align-items: flex-start; /* CHANGE: Align left so icons stay anchored */
+    width: 125px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+
+}
+
+.logo {
+    color: var(--primary);
+    font-size: 21px;
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+}
+
+.logo-des {
+    text-align: center;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* CHANGE: Shifts the logo upwards by 20px on sidenav hover */
+.sidenav:hover .logo-des {
+    text-align: center;    
+    transform: translateY(-5px);
+}
+
+/* Hide text when collapsed */
+.sidenav .logo-text {
+    color: var(--light-text);
+    opacity: 0;
+    font-size: 12px;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.25s ease, max-height 0.35s ease;
+}
+
+/* Reveal text on hover */
+.sidenav:hover .logo-text {
+    opacity: 1;
+    max-height: 20px;
+    margin-bottom: 10px; /* Adds a bit of spacing below the logo text */   
+}
+
+.nav-divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    width: 70%;           /* Controls how wide the line is */
+    margin: 5px auto;    /* Centers horizontally and adds vertical spacing */
+}
+
+/* Hide text when collapsed */
+.sidenav .nav-text {
+    opacity: 0;
+    overflow: hidden;
+    transition: opacity 0.25s ease, max-height 0.35s ease;
+}
+
+/* Reveal text on hover */
+.sidenav:hover .nav-text {
+    opacity: 1;
+    max-height: 20px;
+}
+
+/* The navigation menu links */
+
+.nav-links {
+    padding: 0px 16px;
+    width: 100%;
+}
+
+.nav-links a {
+    text-decoration: none;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-size: 12px;
+    display: block;
+    color: var(--light-text);
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: var(--dark-text);
+}
+
+/* Icon dimensions to ensure perfect alignment */
+.nav-icon {
+    font-size: 18px;
+    min-width: 22.5px;
+    min-height: 19px;
+    align-items: center;
+}
+
+.background{
+    height: 90%;
+    left: 90px;
+    right: 20px;
+    position: fixed; /* Stay in place */
+    top: 50%;
+    transform: translateY(-50%);
+    backdrop-filter: blur(5px);
+    border: var(--border-style);
+    border-radius: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    transition: left 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sidenav:hover ~ #main .background {
+    left: 165px;
+}
+
+.game-container{
+    height: 90%; /* 90% Full-height */
+    width: 95%;
+    position: fixed; /* Stay in place */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 21px;
+    border: var(--border-style);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#game-board {
+    height: 90%;
+    aspect-ratio: 1;
+
+    display: grid;
+
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: repeat(20, 1fr);
+
+    border: 3px solid var(--border);
+}
+
+
+.cell {
+    border: 1px solid var(--white);
+}
+
+.snake {
+    background: var(--primary);
+}
+
+.head {
+    background: var(--primary-dark);
+}

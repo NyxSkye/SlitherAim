@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+    <div id="mySidenav" class="sidenav round">
+        <div class="logo" href="#">
+            <span class="logo-des"><strong>NAS</strong></span>
+            <span class="logo-text">Nyx Aurion Skye</span>
+        </div>
+        <hr class="nav-divider">
+        <ul class="nav-links">
+            <li>
+                <a href="#mario">
+                    <i class="fa-solid fa-user nav-icon"></i>
+                    <span class="nav-text">Mario</span>
+                </a>
+            </li>
+            <li>
+                <a href="#suntyrant">
+                    <i class="fa-solid fa-user nav-icon"></i>
+                    <span class="nav-text">SunTyrant</span>
+                </a>
+            </li>
+            <li>
+                <a href="#rode-resh">
+                    <i class="fa-solid fa-user nav-icon"></i>
+                    <span class="nav-text">RodeRash</span>
+                </a>
+            </li>
+        </ul>
+        <hr class="nav-divider">
+        <ul class="nav-links">
+            <li>
+                <a href="#about">
+                    <i class="fa-solid fa-user nav-icon"></i>
+                    <span class="nav-text">About</span>
+                </a>
+            </li>
+            <li>
+                <a href="#help-suggestions">
+                    <i class="fa-solid fa-user nav-icon"></i>
+                    <span class="nav-text">Help & Suggestions</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <span onclick="openNav()" style="cursor: pointer; font-size: 24px;"></span>
+    <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+    <div id="main">
+        <div class="background">
+            <div class="game-container">
+                <div id="game-board" class="game-board">
+                </div>
+            </div>
+            <!-- type is used to specify the type of script being used. In this case, "module" indicates that the script
+            is an ES6 module, which allows for the use of import and export statements. This is important for
+            organizing code into separate files and reusing code across different parts of the application.  -->
+        </div>
+    </div>
+    <script type="module" src="./js/main.js"></script>
+</body>
+</html>
