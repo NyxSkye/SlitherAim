@@ -25,7 +25,6 @@
 }
 
 body{
-    color: var(--text);
 	background-image: url('/img_assets/bg.jpeg');
     background-size: cover;
     width: 100%;
@@ -220,4 +219,28 @@ body{
 
 .head {
     background: var(--primary-dark);
+}
+
+button {
+    padding: 10px 15px;
+
+    border: none;
+    border-radius: 6px;
+
+    cursor: pointer;
+}
+
+.controls {
+    margin-top: 20px;
+
+    text-align: center;
+}
+
+.controls button {
+    margin: 3px;
+
+    width: 50px;
+    height: 45px;
+
+    font-size: 20px;
 }
